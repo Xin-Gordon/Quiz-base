@@ -15,13 +15,11 @@ public class MainActivity extends Activity {
 
 
     // TODO: Declare member variables here:
-    Button trueButton;
-    Button falseButton;
+    Button true_button;
+    Button false_button;
     TextView scoreTextView;
-    ProgressBar prograssBar;
     TextView questionTextView;
-
-
+    ProgressBar progressBar;
 
 
 
@@ -33,34 +31,31 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        trueButton = findViewById(R.id.true_button);
-        falseButton = findViewById(R.id.false_button);
+
+        true_button = findViewById(R.id.true_button);
+        false_button = findViewById(R.id.false_button);
         questionTextView = findViewById(R.id.question_text_view);
         scoreTextView = findViewById(R.id.score);
-        prograssBar = findViewById(R.id.progress_bar);
+        progressBar = findViewById(R.id.progress_bar);
 
 
-        trueButton.setOnClickListener( new View.OnClickListener(){
+        true_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Log.d("Quiz","True button clicked");
-                Toast tsmg = Toast.makeText(getApplicationContext(),"Ture Button Clicked", Toast.LENGTH_SHORT);
+            public void onClick(View view) {
+                Log.d("Quiz","Turn Button press");
+                Toast tsmg = Toast.makeText(getApplicationContext(),"True clicked",Toast.LENGTH_SHORT);
                 tsmg.show();
             }
         });
 
-        falseButton.setOnClickListener( new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Log.d("Quiz","Flase Button clicked");
-                Toast.makeText(getApplicationContext(),"False Button Clicked", Toast.LENGTH_SHORT).show();
 
+        false_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Quiz","False Button press");
+                Toast.makeText(getApplicationContext(),"False clicked",Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-
 
 
     }
